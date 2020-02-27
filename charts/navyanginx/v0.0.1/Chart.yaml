@@ -1,0 +1,13 @@
+name: navyanginx
+home: https://github.com/ravi/navyanginx
+icon:
+version: 0.0.1
+appVersion: latest
+description: "A project for charts"
+keywords:
+  - navyanginx
+sources:
+  - https://github.com/ravi/navyanginx
+maintainers:
+  - name: "Ravi kallepalli"
+    email: ravi@austinwebdeveloper.co

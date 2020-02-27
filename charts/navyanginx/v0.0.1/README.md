@@ -1,3 +1,3 @@
-# nginx
+# navyanginx
 
 > A project for charts

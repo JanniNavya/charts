@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "nginx.fullname" . }}-nginx
+  name: {{ template "navyanginx.fullname" . }}-nginx
   annotations:
     kubernetes.io/ingress.class: nginx
     {{- if .Values.ingress.nginx.tls }}
@@ -13,7 +13,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
     {{- end }}
   labels:
-    app: {{ template "nginx.name" . }}-nginx
+    app: {{ template "navyanginx.name" . }}-nginx
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -24,11 +24,11 @@ spec:
         paths:
           - path: {{ .Values.ingress.nginx.path }}
             backend:
-              serviceName: {{ template "nginx.fullname" . }}-nginx
+              serviceName: {{ template "navyanginx.fullname" . }}-nginx
               servicePort: http
   {{- if .Values.ingress.nginx.tls }}
   tls:
-    - secretName: {{ template "nginx.nginx_certificate" . }}
+    - secretName: {{ template "navyanginx.nginx-certificate" . }}
       hosts:
         - {{ .Values.ingress.nginx.hostname }}
   {{- end }}
